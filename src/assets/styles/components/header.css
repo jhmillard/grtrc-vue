@@ -1,0 +1,228 @@
+/*
+ * Site Header
+ */
+
+.site-header {
+    position: relative;
+    z-index: 100;
+
+    background: #f7f7f4;
+    color: #171717;
+
+    border-bottom: 1px solid #deded9;
+}
+
+
+/*
+ * Header Layout
+ */
+
+.header-inner {
+    min-height: 108px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 44px;
+}
+
+
+/*
+ * Brand / Logo
+ */
+
+.site-brand {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.site-logo {
+    display: block;
+
+    width: auto;
+    height: 76px;
+
+    object-fit: contain;
+}
+
+
+/*
+ * Navigation
+ */
+
+.main-nav {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 34px;
+}
+
+.main-nav a {
+    position: relative;
+
+    padding-block: 42px;
+
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+
+    color: #3d3d3a;
+    text-decoration: none;
+
+    transition: color var(--transition-fast);
+}
+
+.main-nav a:hover {
+    color: #111111;
+}
+
+.main-nav a::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: 31px;
+
+    width: 100%;
+    height: 3px;
+
+    background: var(--color-primary);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform var(--transition-fast);
+}
+
+.main-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/*
+ * Phone CTA
+ */
+
+.header-call {
+    flex-shrink: 0;
+
+    min-height: 52px;
+    padding-inline: 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    color: #171717;
+    background: var(--color-primary);
+
+    text-decoration: none;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+
+    transition:
+            background var(--transition-fast),
+            border-color var(--transition-fast),
+            transform var(--transition-fast);
+}
+
+.header-call:hover {
+    background: #ffffff;
+    border-color: #171717;
+
+    transform: translateY(-1px);
+}
+
+
+/*
+ * Medium Screens
+ */
+
+@media (max-width: 1100px) {
+
+    .header-inner {
+        gap: 28px;
+    }
+
+    .site-logo {
+        height: 64px;
+    }
+
+    .main-nav {
+        gap: 22px;
+    }
+
+    .main-nav a {
+        font-size: 0.9rem;
+    }
+
+    .header-call {
+        padding-inline: 18px;
+
+        font-size: 0.88rem;
+    }
+}
+
+
+/*
+ * Mobile
+ *
+ * Main navigation is intentionally hidden for now.
+ * We'll add the mobile navigation separately.
+ */
+
+@media (max-width: 850px) {
+
+    .header-inner {
+        min-height: 88px;
+    }
+
+    .site-logo {
+        height: 58px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .header-call {
+        margin-left: auto;
+    }
+}
+
+
+/*
+ * Small Mobile
+ */
+
+@media (max-width: 500px) {
+
+    .header-inner {
+        min-height: 80px;
+
+        gap: 16px;
+    }
+
+    .site-logo {
+        height: 50px;
+    }
+
+    .header-call {
+        min-height: 46px;
+        padding-inline: 13px;
+
+        font-size: 0.78rem;
+    }
+}

@@ -1,7 +1,16 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import SiteHeader from './components/SiteHeader.vue'
+import SiteFooter from './components/SiteFooter.vue'
 </script>
 
 <template>
-  <HelloWorld />
+  <div class="site">
+    <SiteHeader />
+
+    <main class="site-main">
+      <RouterView />
+    </main>
+
+    <SiteFooter />
+  </div>
 </template>
